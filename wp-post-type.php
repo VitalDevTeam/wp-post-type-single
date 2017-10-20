@@ -120,7 +120,7 @@ add_action('init', 'vtl_widget_type_init', 0);
 /**
  * Post Type Update Messages
  */
-function widget_updated_messages( $messages ) {
+function vtl_widget_updated_messages( $messages ) {
 
     $post             = get_post();
     $post_type        = get_post_type( $post );
@@ -155,7 +155,7 @@ function widget_updated_messages( $messages ) {
     return $messages;
 
 }
-add_filter('post_updated_messages', 'widget_updated_messages');
+add_filter('post_updated_messages', 'vtl_widget_updated_messages');
 
 
 /**

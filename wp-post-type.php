@@ -15,16 +15,18 @@ if (! defined('ABSPATH')) {
 
 class VTL_Widget {
 
-	public $post_type_slug;
-	public $post_type_singular;
-	public $post_type_plural;
+	private $post_type_name;
+	private $post_type_slug;
+	private $post_type_singular;
+	private $post_type_plural;
 
 	public function __construct() {
+		$this->post_type_name = 'vtl_widget';
 		$this->post_type_slug = 'widget';
 		$this->post_type_singular = 'Widget';
 		$this->post_type_plural = 'Widgets';
 
-		add_action('init', [$this, 'register_widget_post_type'], 0);
+		add_action('init', [$this, 'register_post_type'], 0);
 		add_action('init', [$this, 'register_widget_type_taxonomy'], 0);
 		add_filter('post_updated_messages', [$this, 'updated_messages']);
 		add_filter('bulk_post_updated_messages', [$this, 'bulk_updated_messages'], 10, 2);
@@ -35,7 +37,7 @@ class VTL_Widget {
 	 * Registers widget post type
 	 * @return void
 	 */
-	public function register_widget_post_type() {
+	public function register_post_type() {
 
 		register_post_type($this->post_type_slug, [
 			'label'               => $this->post_type_singular,

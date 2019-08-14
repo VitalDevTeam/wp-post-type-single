@@ -39,7 +39,7 @@ class VTL_Widget {
 	 */
 	public function register_post_type() {
 
-		register_post_type($this->post_type_slug, [
+		register_post_type($this->post_type_name, [
 			'label'               => $this->post_type_singular,
 			'description'         => $this->post_type_singular,
 			'labels'              => [
@@ -107,7 +107,7 @@ class VTL_Widget {
 
 		register_taxonomy(
 			$tax_name,
-			[$this->post_type_slug],
+			[$this->post_type_name],
 			[
 				'labels'            => [
 					'name'                       => $term_plural,
@@ -155,7 +155,7 @@ class VTL_Widget {
 		$post_type = get_post_type($post);
 		$post_type_object = get_post_type_object($post_type);
 
-		$messages[$this->post_type_slug] = [
+		$messages[$this->post_type_name] = [
 			0  => '',
 			1  => sprintf('%s updated.', $this->post_type_singular),
 			2  => 'Custom field updated.',
@@ -169,7 +169,7 @@ class VTL_Widget {
 			10 => sprintf('%s draft updated.', $this->post_type_singular),
 		];
 
-		if ($post_type_object->publicly_queryable & $post->post_type === $this->post_type_slug) {
+		if ($post_type_object->publicly_queryable & $post->post_type === $this->post_type_name) {
 			$permalink = get_permalink($post->ID);
 			$view_link = sprintf(' <a href="%s">View %s</a>', esc_url($permalink), $this->post_type_singular);
 			$messages[ $post_type ][1] .= $view_link;
@@ -191,7 +191,7 @@ class VTL_Widget {
 	 * @return array                Modified messages
 	 */
 	public function bulk_updated_messages($bulk_messages = [], $bulk_counts = []) {
-		$bulk_messages[$this->post_type_slug] = [
+		$bulk_messages[$this->post_type_name] = [
 			'updated'   => sprintf(_n('%1$s %2$s updated.', '%1$s %3$s updated.', $bulk_counts['updated']), $bulk_counts['updated'], strtolower($this->post_type_singular), strtolower($this->post_type_plural)),
 			'locked'    => sprintf(_n('%1$s %2$s not updated, somebody is editing it.', '%1$s %3$s not updated, somebody is editing them.', $bulk_counts['locked']), $bulk_counts['locked'], strtolower($this->post_type_singular), strtolower($this->post_type_plural)),
 			'deleted'   => sprintf(_n('%1$s %2$s permanently deleted.', '%1$s %3$s permanently deleted.', $bulk_counts['deleted']), $bulk_counts['deleted'], strtolower($this->post_type_singular), strtolower($this->post_type_plural)),
@@ -211,7 +211,7 @@ class VTL_Widget {
 	 */
 	public function enter_title_here($title, $post) {
 		$post_type = get_post_type($post);
-		if ($this->post_type_slug === $post_type) {
+		if ($this->post_type_name === $post_type) {
 			$title = sprintf('Enter %s name here', strtolower($this->post_type_singular));
 		}
 		return $title;

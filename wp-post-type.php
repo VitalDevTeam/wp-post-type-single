@@ -1,11 +1,11 @@
 <?php
 /*
 	Plugin Name: Post Type (Description)
-	Plugin URI: https://github.com/VitalDevTeam/custom-post-type-boilerplate
+	Plugin URI: https://vtldesign.com
 	Description: A custom post type for {description}
-	Version: 2.0
+	Version: 2.5
 	Author: Vital Dev Team
-	Author URI: http://vtldesign.com
+	Author URI: https://vtldesign.com
 	License: GPL2
 */
 

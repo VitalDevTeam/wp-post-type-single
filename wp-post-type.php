@@ -116,7 +116,7 @@ class VTL_Post_Type_Widget {
 			'show_in_menu'          => true,
 			'show_in_nav_menus'     => true,
 			'show_in_admin_bar'     => true,
-			'show_in_rest'          => false,
+			'show_in_rest'          => true,
 			'rest_base'             => $this->post_type_name,
 			'rest_controller_class' => 'WP_REST_Posts_Controller',
 			'menu_position'         => null,

@@ -18,7 +18,7 @@ if (! defined('ABSPATH')) {
  *
  * @since 1.0.0
  */
-class VTL_Widget {
+class VTL_Post_Type_Widget {
 
 	/**
 	 * The post type name.
@@ -230,4 +230,4 @@ class VTL_Widget {
 	}
 }
 
-new VTL_Widget();
+new VTL_Post_Type_Widget();

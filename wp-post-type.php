@@ -129,12 +129,12 @@ class VTL_Post_Type_Widget {
 				'thumbnail',
 			],
 			'register_meta_box_cb'  => null,
-			'has_archive'           => true,
+			'has_archive'           => true, // Double-check value of 'rewrite' => 'feeds'
 			'rewrite'               => [
 				'slug'       => $this->post_type_base,
 				'with_front' => false,
-				'feeds'      => true,
-				'pages'      => true,
+				'feeds'      => true, // Whether the feed permastruct should be built for this post type. Default is value of $has_archive.
+				'pages'      => true, // Whether the permastruct should provide for pagination.
 				'ep_mask'    => EP_PERMALINK,
 			],
 			'can_export'            => true,

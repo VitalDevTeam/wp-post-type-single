@@ -1,10 +1,10 @@
 <?php
 /*
-	Plugin Name: Post Type: Description
+	Plugin Name: Post Type: Widget
 	Plugin URI: https://vtldesign.com
-	Description: A custom post type for {description}
-	Version: 2.5
-	Author: Vital Dev Team
+	Description: A custom post type for widgets.
+	Version: 3.0.0
+	Author: Vital
 	Author URI: https://vtldesign.com
 	Text Domain: vital
 */

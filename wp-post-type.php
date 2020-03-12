@@ -122,7 +122,6 @@ class VTL_Post_Type_Widget {
 			'menu_position'         => null,
 			'menu_icon'             => 'dashicons-star-filled',
 			'capability_type'       => 'post',
-			'map_meta_cap'          => false,
 			'supports'              => [
 				'title',
 				'editor',

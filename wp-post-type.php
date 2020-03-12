@@ -1,12 +1,12 @@
 <?php
 /*
-	Plugin Name: Post Type (Description)
+	Plugin Name: Post Type: Description
 	Plugin URI: https://vtldesign.com
 	Description: A custom post type for {description}
 	Version: 2.5
 	Author: Vital Dev Team
 	Author URI: https://vtldesign.com
-	License: GPL2
+	Text Domain: vital
 */
 
 if (! defined('ABSPATH')) {
